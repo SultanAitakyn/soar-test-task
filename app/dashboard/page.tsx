@@ -9,9 +9,12 @@ const DashboardPage = () => {
     <>
       <div className={styles.dashboard}>
         <div className={styles.contentWrapper}>
-          <h2 className={styles.header}>My Cards</h2>
+          <div className={styles.header_titles}>
+            <h2 className={styles.header}>My Cards</h2>
+            <h2 className={styles.header_all}>See All</h2>
+          </div>
           <div className={styles.cardsWrapper}>
-            <CreditCards />
+          <CreditCards />
           </div>
         </div>
 

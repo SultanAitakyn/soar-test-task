@@ -20,11 +20,23 @@
     overflow: hidden;
   }
 
+  .header_titles {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
   .header {
     color: #343c6a;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 20px;
+  }
+
+  .header_all {
+    font-size: 17px;
+    color: #343c6a;
+    font-weight: 600;
   }
 }
 
