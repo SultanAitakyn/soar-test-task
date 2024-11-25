@@ -1,8 +1,10 @@
 import styles from './Dashboard.module.scss';
-import Chart from '../components/Chart';
 import UserList from '../components/UserList';
 import CreditCards from "./CreditCards";
 import TransactionCard from "./TransactionCard";
+import BarChart from "../components/Charts/BarChart";
+import PieChart from "../components/Charts/PieChart";
+import LineChart from "../components/Charts/LineChart";
 
 const DashboardPage = () => {
     return (
@@ -22,12 +24,12 @@ const DashboardPage = () => {
 
                 <div className={styles.contentWrapper}>
                     <h2 className={styles.header}>Weekly Activity</h2>
-                    <Chart type="bar"/>
+                    <BarChart/>
                 </div>
 
                 <div className={styles.contentWrapper}>
                     <h2 className={styles.header}>Expense Statistics</h2>
-                    <Chart type="pie"/>
+                    <PieChart/>
                 </div>
             </div>
 
@@ -38,7 +40,7 @@ const DashboardPage = () => {
                 </div>
                 <div className={styles.balanceHistory}>
                     <h2 className={styles.header}>Balance History</h2>
-                    <Chart type="line"/>
+                    <LineChart/>
                 </div>
             </div>
         </>

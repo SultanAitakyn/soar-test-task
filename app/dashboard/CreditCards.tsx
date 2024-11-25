@@ -1,7 +1,6 @@
-// CreditCards.jsx
 import styles from "./CreditCards.module.scss";
 
-const cardData = [
+const cardsData = [
     {
         balance: "$5,756",
         cardHolder: "Eddy Cusuma",
@@ -15,14 +14,13 @@ const cardData = [
         validThru: "11/23",
         cardNumber: "1234 **** **** 5678",
         cardType: "mastercard",
-    },
-    // Add more card data if needed
+    }
 ];
 
 const CreditCards = () => {
     return (
         <>
-            {cardData.map((card, index) => (
+            {cardsData.map((card, index) => (
                 <div
                     key={index}
                     className={`${styles.container} ${
