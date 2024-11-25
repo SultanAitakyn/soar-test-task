@@ -3,8 +3,8 @@
   min-width: 250px;
   height: 235px;
   border-radius: 25px;
-  background: linear-gradient(107.38deg, #5B5A6F 2.61%, #000000 101.2%);
-  color: #FFFFFF;
+  background: linear-gradient(107.38deg, #5b5a6f 2.61%, #000000 101.2%);
+  color: #ffffff;
   display: flex;
   flex-direction: column;
 
@@ -17,7 +17,7 @@
     .field {
       font-size: 12px;
       font-weight: 400;
-      color: #FFFFFFB2;
+      color: #ffffffb2;
       line-height: 14px;
     }
 
@@ -44,7 +44,8 @@
         margin-right: 64px;
       }
 
-      .name, .date {
+      .name,
+      .date {
         font-weight: bold;
       }
     }
@@ -56,35 +57,40 @@
     align-items: center;
     height: 70px;
     background: linear-gradient(
-                    180deg,
-                    rgba(255, 255, 255, 0.15) 0%,
-                    rgba(255, 255, 255, 0) 100%
+      180deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0) 100%
     );
     padding: 0 26px;
   }
 }
 
 .containerEven {
-  background: #FFFFFF;
-  color: #343C6A;
-  border: 1px solid #DFEAF2;
+  background: #ffffff;
+  color: #343c6a;
+  border: 1px solid #dfeaf2;
 
-  .body, .footer {
+  .body,
+  .footer {
     color: inherit;
 
-    .balance, .info, .numbers {
+    .balance,
+    .info,
+    .numbers {
       color: inherit;
     }
 
     .field {
-      color: #718EBF;
+      color: #718ebf;
     }
 
     .value {
-      color: #343C6A;
+      color: #343c6a;
     }
 
-    .text, .name, .date {
+    .text,
+    .name,
+    .date {
       color: inherit;
     }
   }
@@ -98,6 +104,6 @@
   }
 
   .footer {
-    border-top: 1px solid #DFEAF2;
+    border-top: 1px solid #dfeaf2;
   }
 }

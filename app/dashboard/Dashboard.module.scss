@@ -21,7 +21,7 @@
   }
 
   .header {
-    color: #343C6A;
+    color: #343c6a;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -33,7 +33,7 @@
   gap: 30px;
 
   .header {
-    color: #343C6A;
+    color: #343c6a;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -66,7 +66,8 @@
 }
 
 @media (max-width: 576px) {
-  .dashboard .header, .thirdRow .header {
+  .dashboard .header,
+  .thirdRow .header {
     font-size: 16px;
   }
 }
