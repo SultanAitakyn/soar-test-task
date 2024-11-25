@@ -1,5 +1,5 @@
 import './styles/globals.scss';
-import LayoutWrapper from "./components/LayoutWrapper";
+import {LayoutWrapper} from "./components/Layout";
 import {ReactNode} from "react";
 
 export const metadata = {

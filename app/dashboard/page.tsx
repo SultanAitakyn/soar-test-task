@@ -2,9 +2,7 @@ import styles from './Dashboard.module.scss';
 import UserList from '../components/UserList';
 import CreditCards from "./CreditCards";
 import TransactionCard from "./TransactionCard";
-import BarChart from "../components/Charts/BarChart";
-import PieChart from "../components/Charts/PieChart";
-import LineChart from "../components/Charts/LineChart";
+import {BarChart, PieChart, LineChart} from "../components/Charts";
 
 const DashboardPage = () => {
     return (

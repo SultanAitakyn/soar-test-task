@@ -14,9 +14,9 @@ const Tabs = () => {
             case 'Edit Profile':
                 return <EditProfileForm />;
             case 'Preferences':
-                return <div>Preferences form content goes here!</div>;
+                return <div className={styles.soon}>Coming soon!</div>;
             case 'Security':
-                return <div>Security form content goes here!</div>;
+                return <div className={styles.soon}>Coming soon!</div>;
             default:
                 return null;
         }

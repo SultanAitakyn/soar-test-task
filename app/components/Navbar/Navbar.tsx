@@ -1,9 +1,9 @@
-// Navbar.tsx
 'use client';
 
 import styles from './Navbar.module.scss';
-import Search from "../components/Search";
+import Search from "../Search";
 import {usePathname} from "next/navigation";
+import Image from "next/image";
 
 const Navbar = ({openSidebar}: { openSidebar: () => void }) => {
     const pathname = usePathname();
@@ -18,7 +18,7 @@ const Navbar = ({openSidebar}: { openSidebar: () => void }) => {
         <div className={styles.navbar}>
             <div className={styles.topRow}>
                 <button className={styles.burgerButton} onClick={openSidebar}>
-                    <img src="/icons/menu.svg" alt="Menu"/>
+                    <Image src="/icons/menu.svg" alt="Menu" width={30} height={30} />
                 </button>
                 <div className={styles.pageTitle}>{pageTitle}</div>
                 <div className={styles.navbarRight}>
@@ -37,7 +37,7 @@ const Navbar = ({openSidebar}: { openSidebar: () => void }) => {
                             </div>
                         </div>
                     </div>
-                    <img src="/images/avatar.svg" alt="Profile" className={styles.avatar}/>
+                    <Image src="/images/avatar.svg" alt="Profile" className={styles.avatar} width={60} height={60} />
                 </div>
             </div>
             <div className={styles.bottomRow}>

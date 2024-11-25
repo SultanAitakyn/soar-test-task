@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .menu {
   list-style: none;
   margin-top: 10px;
@@ -13,15 +15,15 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
-    color: #b1b1b1;
+    color: $menu-text-color;
     transition: all 0.3s ease;
 
     &:hover {
-      background: #f9f9f9;
+      background: $menu-hover-bg;
     }
 
     &.active {
-      color: #232323;
+      color: $menu-active-text-color;
 
       &::before {
         content: "";
@@ -29,7 +31,7 @@
         left: 0;
         height: 60px;
         width: 6px;
-        background: #232323;
+        background: $menu-active-text-color;
         border-radius: 0px 10px 10px 0px;
       }
     }
@@ -49,7 +51,6 @@
     }
 
     .label {
-      font-size: 18px;
       line-height: 22px;
       color: inherit;
       font-weight: 500;
@@ -60,6 +61,17 @@
         filter: none;
         opacity: 1;
       }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .menu .menuItem {
+    font-size: 14px;
+
+    .iconContainer {
+      width: 20px;
+      height: 20px;
     }
   }
 }

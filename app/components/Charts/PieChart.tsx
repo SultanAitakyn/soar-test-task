@@ -1,64 +1,47 @@
 'use client';
-import styles from "@/app/components/Charts/Chart.module.scss";
+
+import styles from '@/app/components/Charts/Chart.module.scss';
 import {
     PieChart as RechartsPieChart,
     Pie,
     Tooltip,
     Cell,
     ResponsiveContainer,
-    Sector
+    Sector,
+    PieLabelRenderProps,
+    SectorProps,
 } from 'recharts';
-const pieData = [
+import {ActiveShape} from "recharts/types/util/types";
+import {PieSectorDataItem} from "recharts/types/polar/Pie";
+
+interface PieDataEntry {
+    name: string;
+    value: number;
+    color: string;
+    level: number;
+}
+
+const pieData: PieDataEntry[] = [
     { name: 'Bill Expense', value: 15, color: '#FC7900', level: 6 },
     { name: 'Entertainment', value: 25, color: '#343C6A', level: 3 },
     { name: 'Investment', value: 35, color: '#396AFF', level: 1 },
     { name: 'Others', value: 25, color: '#232323', level: 3 },
 ];
 
-const PieChart = () => {
-    return (
-        <div className={styles.pieChartContainer}>
-            <ResponsiveContainer width="100%" height={300}>
-                <RechartsPieChart>
-                    <Pie
-                        data={pieData}
-                        dataKey="value"
-                        nameKey="name"
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={0}
-                        outerRadius={120}
-                        fill="#8884d8"
-                        paddingAngle={5}
-                        labelLine={false}
-                        label={renderCustomizedLabel}
-                        activeIndex={activeIndices}       // Specify active slices
-                        activeShape={renderActiveShape}   // Use custom active shape
-                        stroke="#FFFFFF"    // Set stroke to the background color
-                        strokeWidth={5}
-                    >
-                        {pieData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                    </Pie>
-                    <Tooltip/>
-                </RechartsPieChart>
-            </ResponsiveContainer>
-        </div>
-    );
-}
-
 const activeIndices = pieData
     .map((entry, index) => (entry.level > 1 ? index : null))
-    .filter(index => index !== null);
+    .filter((index): index is number => index !== null);
 
-const renderCustomizedLabel = ({
-                                   cx, cy, midAngle, innerRadius, outerRadius, value, name,
-                               }) => {
+const renderCustomizedLabel = (props: PieLabelRenderProps) => {
+    const { cx = 0, cy = 0, midAngle = 0, innerRadius = 0, outerRadius = 0, payload } = props;
+    const value = payload.value as number;
+    const name = payload.name as string;
+
     const RADIAN = Math.PI / 180;
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+    const radius = (innerRadius as number) + ((outerRadius as number)
+        - (innerRadius as number)) * 0.5;
+    const x = (cx as number) + radius * Math.cos(-midAngle * RADIAN);
+    const y = (cy as number) + radius * Math.sin(-midAngle * RADIAN);
 
     return (
         <text
@@ -77,12 +60,19 @@ const renderCustomizedLabel = ({
     );
 };
 
-const renderActiveShape = (props) => {
+const renderActiveShape = (props: SectorProps & { payload: PieDataEntry }) => {
     const {
-        cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, payload
+        cx = 0,
+        cy = 0,
+        innerRadius = 0,
+        outerRadius = 0,
+        startAngle = 0,
+        endAngle = 0,
+        fill,
+        payload,
     } = props;
 
-    const adjustedOuterRadius = outerRadius + (5 * payload.payload.level);
+    const adjustedOuterRadius = outerRadius + 5 * payload.level;
 
     return (
         <Sector
@@ -96,6 +86,39 @@ const renderActiveShape = (props) => {
             stroke="#FFFFFF"
             strokeWidth={5}
         />
+    );
+};
+
+const PieChart = () => {
+    return (
+        <div className={styles.pieChartContainer}>
+            <ResponsiveContainer width="100%" height={300}>
+                <RechartsPieChart>
+                    <Pie
+                        data={pieData}
+                        dataKey="value"
+                        nameKey="name"
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={0}
+                        outerRadius={120}
+                        fill="#8884d8"
+                        paddingAngle={5}
+                        labelLine={false}
+                        label={renderCustomizedLabel}
+                        activeIndex={activeIndices}
+                        activeShape={renderActiveShape as ActiveShape<PieSectorDataItem>}
+                        stroke="#FFFFFF"
+                        strokeWidth={5}
+                    >
+                        {pieData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                    </Pie>
+                    <Tooltip />
+                </RechartsPieChart>
+            </ResponsiveContainer>
+        </div>
     );
 };
 
