@@ -1,0 +1,63 @@
+.chartContainer {
+  width: 100%;
+  padding: 28px 30px 28px 0;
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.legendContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 22px;
+
+  .legendItem {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #718EBF;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.depositCircle,
+.withdrawCircle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.depositCircle {
+  background: #396aff;
+}
+
+.withdrawCircle {
+  background: #232323;
+}
+
+.pieChartContainer {
+  width: 100%;
+  min-width: 350px;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  background: #FFFFFF;
+  border-radius: 25px;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.recharts-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  fill: #FFFFFF;
+  text-align: center;
+}

@@ -1,0 +1,56 @@
+@import '../styles/variables';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Two columns for desktop
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // Single column for mobile
+    }
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: $text-color;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+  }
+
+  .saveButton {
+    align-self: flex-end; // Align the button to the right
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}

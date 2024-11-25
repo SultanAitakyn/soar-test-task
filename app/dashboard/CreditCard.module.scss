@@ -1,0 +1,106 @@
+/* CreditCard.module.scss */
+.container {
+  width: 100%;
+  min-width: 250px;
+  height: 235px;
+  border-radius: 25px;
+  background: linear-gradient(107.38deg, #5B5A6F 2.61%, #000000 101.2%);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+
+  .body {
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    height: 165px;
+
+    .field {
+      font-size: 12px;
+      font-weight: 400;
+      color: #FFFFFFB2;
+      line-height: 14px;
+    }
+
+    .value {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    .balanceValue {
+      font-size: 20px;
+    }
+
+    .balance {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 33px;
+    }
+
+    .info {
+      display: flex;
+
+      .cardholder {
+        margin-right: 64px;
+      }
+
+      .name, .date {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(255, 255, 255, 0) 100%
+    );
+    padding: 0 26px;
+  }
+}
+
+/* Styles for even cards */
+.containerEven {
+  background: #FFFFFF;
+  color: #343C6A;
+  border: 1px solid #DFEAF2;
+
+  /* Ensure text inside nested elements is black */
+  .body, .footer {
+    color: inherit;
+
+    .balance, .info, .numbers {
+      color: inherit;
+    }
+
+    .field {
+      color: #718EBF;
+    }
+
+    .value {
+      color: #343C6A;
+    }
+
+    .text, .name, .date {
+      color: inherit;
+    }
+  }
+
+  .cardType {
+    filter: invert(0.5);
+  }
+
+  .chipIcon {
+    filter: invert(0.7);
+  }
+
+  .footer {
+    border-top: 1px solid #DFEAF2;
+  }
+}

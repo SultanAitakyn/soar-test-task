@@ -1,0 +1,35 @@
+@import '../styles/variables';
+
+.tabLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+
+    .tabButton {
+      padding: 10px 20px;
+      border: none;
+      background: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: $text-color;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &.activeTab {
+        border-bottom: 2px solid $primary-color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .tabContent {
+    padding: 20px 0;
+  }
+}

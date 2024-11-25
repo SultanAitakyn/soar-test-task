@@ -1,0 +1,83 @@
+.transactionList {
+  min-width: 250px;
+  padding: 1rem;
+  height: 235px;
+  background: #ffffff;
+  border-radius: 25px;
+}
+
+.transactionItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.iconContainer {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.transactionDetails {
+  flex-grow: 1;
+  margin-left: 1rem;
+
+  .title {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #232323;
+  }
+
+  .date {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #718EBF;
+  }
+}
+
+.amountContainer {
+  margin-left: auto;
+
+  .amount {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.positive {
+  color: #41D4A8;
+}
+
+.negative {
+  color: #FF4B4A;
+}
+
+.iconBackgroundCard {
+  background: #FFF5D9;
+}
+
+.iconBackgroundPaypal {
+  background: #E7EDFF;
+}
+
+.iconBackgroundUser {
+  background: #DCFAF8;
+}

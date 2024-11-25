@@ -1,0 +1,53 @@
+@import '../styles/variables';
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+
+    .formGroup {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .saveButton {
+    grid-column: 1 / -1;
+    padding: 15px;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
