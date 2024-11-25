@@ -1,17 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import {ChangeEvent, FormEvent, useState} from 'react';
 import styles from './Form.module.scss';
+import {UserFormData} from "@/app/settings/EditProfileForm";
 
-const Form = ({ userData }: { userData: any }) => {
+const Form = ({ userData }: { userData: UserFormData }) => {
     const [formData, setFormData] = useState(userData);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setFormData((prev: any) => ({ ...prev, [name]: value }));
+        setFormData((prev: UserFormData) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
     };
 

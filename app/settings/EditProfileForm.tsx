@@ -3,8 +3,25 @@
 import {useState} from 'react';
 import styles from './EditProfileForm.module.scss';
 
+export interface UserFormData {
+    name: string;
+    username: string;
+    email: string;
+    password: string;
+    dateOfBirth: string;
+    presentAddress: string;
+    permanentAddress: string;
+    city: string;
+    postalCode: string;
+    country: string;
+    birth: string;
+    address: string;
+    perm_address: string;
+    code: string;
+}
+
 const EditProfileForm = () => {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<UserFormData>({
         name: 'Charlene Reed',
         username: 'Charlene Reed',
         email: 'charlenereed@gmail.com',
