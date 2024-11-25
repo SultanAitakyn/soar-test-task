@@ -14,7 +14,7 @@ const DashboardPage = () => {
             <h2 className={styles.header_all}>See All</h2>
           </div>
           <div className={styles.cardsWrapper}>
-          <CreditCards />
+            <CreditCards />
           </div>
         </div>
 

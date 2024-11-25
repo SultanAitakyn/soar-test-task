@@ -17,7 +17,7 @@ const BarChart = () => {
   const isLarge = useMediaQuery({ query: '(max-width: 992px)' });
 
   const fontSize = isMobile ? 10 : isTablet ? 12 : 13;
-  const barSize = isMobile ? 7 : (isTablet || isLarge) ? 10 : 15;
+  const barSize = isMobile ? 7 : isTablet || isLarge ? 10 : 15;
   const barGap = isMobile ? 2 : isTablet ? 10 : 12;
 
   const barData = [
@@ -71,7 +71,7 @@ const BarChart = () => {
           <Tooltip
             contentStyle={{
               borderRadius: '12px',
-              border: '1px solid #e6eff5'
+              border: '1px solid #e6eff5',
             }}
           />
           <Bar

@@ -4,7 +4,9 @@ export default function NotFound() {
   return (
     <div>
       <h2>Coming soon</h2>
-      <Link href="/dashboard" style={{color: "blue"}}>Return to Dashboard</Link>
+      <Link href="/dashboard" style={{ color: 'blue' }}>
+        Return to Dashboard
+      </Link>
     </div>
   );
 }

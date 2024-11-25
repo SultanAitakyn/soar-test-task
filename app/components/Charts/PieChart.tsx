@@ -128,7 +128,7 @@ const PieChart = () => {
           <Tooltip
             contentStyle={{
               borderRadius: '12px',
-              border: '1px solid #e6eff5'
+              border: '1px solid #e6eff5',
             }}
           />
         </RechartsPieChart>

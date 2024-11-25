@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata = {
   title: 'Soar Task',
-  description: 'Soar Test Task'
+  description: 'Soar Test Task',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
