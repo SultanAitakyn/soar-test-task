@@ -13,8 +13,6 @@ const Form = ({ userData }: { userData: any }) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add API call to save form data here
     };
 
     return (

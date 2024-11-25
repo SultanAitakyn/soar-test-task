@@ -1,54 +1,104 @@
-@import '../styles/variables';
-
+/* Navbar.module.scss */
 .navbar {
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
   background-color: #FFFFFF;
+  padding: 20px 40px;
 
-  .pageTitle {
-    color: #343C6A;
-    font-size: 28px;
-    font-weight: 600;
-  }
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 30px;
-
-
-  .buttonContainer {
+  .topRow {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: #f8fafd; // Light circle background
-    border-radius: 50%; // Circular shape
+
+    .burgerButton {
+      border: none;
+      background-color: transparent;
+      display: none;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .pageTitle {
+      color: #343C6A;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .navbarRight {
+      display: flex;
+      align-items: center;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-right: 35px;
+
+      .buttonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: #f8fafd;
+        border-radius: 50%;
+      }
+
+      .iconWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      margin-left: 5px;
+    }
   }
 
-  .iconWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-  }
-
-  .avatar {
-    width: 60px;
-    height: 60px;
-    margin-left: 5px;
+  .bottomRow {
+    display: none;
   }
 }
 
 @media (max-width: 992px) {
-  .pageTitle {
-    display: none;
+  .navbar {
+    .topRow {
+      .actions {
+        .buttonContainer {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .topRow {
+      .burgerButton {
+        display: block;
+      }
+
+      .pageTitle {
+        flex: 1;
+        text-align: center;
+      }
+
+      .actions {
+        display: none;
+      }
+    }
+
+    .bottomRow {
+      display: block;
+      margin-top: 20px;
+    }
   }
 }

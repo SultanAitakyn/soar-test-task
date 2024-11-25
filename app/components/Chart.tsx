@@ -184,9 +184,7 @@ const renderActiveShape = (props) => {
         cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, payload
     } = props;
 
-    console.log(payload)
     const adjustedOuterRadius = outerRadius + (5 * payload.payload.level);
-    console.log(adjustedOuterRadius)
 
     return (
         <Sector

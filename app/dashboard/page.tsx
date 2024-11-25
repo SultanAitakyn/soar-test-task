@@ -1,19 +1,17 @@
 import styles from './Dashboard.module.scss';
-import Card from '../components/Card';
 import Chart from '../components/Chart';
 import UserList from '../components/UserList';
-import CreditCard from "@/app/dashboard/CreditCard";
-import TransactionCard from "@/app/dashboard/TransactionCard";
+import CreditCards from "./CreditCards";
+import TransactionCard from "./TransactionCard";
 
 const DashboardPage = () => {
     return (
         <>
             <div className={styles.dashboard}>
-                {/* First row */}
                 <div className={styles.contentWrapper}>
                     <h2 className={styles.header}>My Cards</h2>
                     <div className={styles.cardsWrapper}>
-                        <CreditCard/>
+                        <CreditCards/>
                     </div>
                 </div>
 
@@ -22,7 +20,6 @@ const DashboardPage = () => {
                     <TransactionCard/>
                 </div>
 
-                {/* Second row */}
                 <div className={styles.contentWrapper}>
                     <h2 className={styles.header}>Weekly Activity</h2>
                     <Chart type="bar"/>
@@ -33,6 +30,7 @@ const DashboardPage = () => {
                     <Chart type="pie"/>
                 </div>
             </div>
+
             <div className={styles.thirdRow}>
                 <div className={styles.quickTransfer}>
                     <h2 className={styles.header}>Quick Transfer</h2>

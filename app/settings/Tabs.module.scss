@@ -3,33 +3,43 @@
 .tabLayout {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 30px;
 
   .tabs {
     display: flex;
     border-bottom: 1px solid #ddd;
+    overflow: auto;
 
     .tabButton {
+      min-width: 70px;
       padding: 10px 20px;
       border: none;
       background: none;
       font-size: 16px;
       cursor: pointer;
-      color: $text-color;
+      color: #718EBF;
       transition: color 0.3s ease;
 
-      &:hover {
-        color: $primary-color;
-      }
-
       &.activeTab {
-        border-bottom: 2px solid $primary-color;
-        font-weight: bold;
+        //border-bottom: 2px solid #232323;
+        border-bottom: 3px solid #232323;
+        border-top-left-radius: 15px;
+        font-weight: 500;
+        color: #232323;
       }
     }
   }
+}
 
-  .tabContent {
-    padding: 20px 0;
+@media (max-width: 576px) {
+  .tabLayout {
+    .tabs {
+      .tabButton {
+        padding: 10px 13px;
+        font-size: 13px;
+      }
+    }
   }
 }

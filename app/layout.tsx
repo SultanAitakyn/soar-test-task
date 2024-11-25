@@ -1,22 +1,18 @@
-import Sidebar from './components/Sidebar';
-import Navbar from './components/Navbar';
 import './styles/globals.scss';
+import LayoutWrapper from "./components/LayoutWrapper";
+import {ReactNode} from "react";
 
 export const metadata = {
     title: 'Soar Task',
-    description: 'Next.js App using App Router',
+    description: 'Soar Test Task',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({children}: { children: ReactNode }) {
     return (
         <html lang="en">
-            <body style={{ display: 'flex', height: '100vh' }}>
-                <Sidebar />
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', width: 'calc(100% - 250px)' }}>
-                    <Navbar />
-                    <main>{children}</main>
-                </div>
-            </body>
+        <body>
+        <LayoutWrapper>{children}</LayoutWrapper>
+        </body>
         </html>
     );
 }

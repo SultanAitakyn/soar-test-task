@@ -1,5 +1,5 @@
-// CreditCard.jsx
-import styles from "./CreditCard.module.scss";
+// CreditCards.jsx
+import styles from "./CreditCards.module.scss";
 
 const cardData = [
     {
@@ -19,7 +19,7 @@ const cardData = [
     // Add more card data if needed
 ];
 
-const CreditCard = () => {
+const CreditCards = () => {
     return (
         <>
             {cardData.map((card, index) => (
@@ -61,4 +61,4 @@ const CreditCard = () => {
     );
 };
 
-export default CreditCard;
+export default CreditCards;

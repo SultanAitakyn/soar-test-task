@@ -61,3 +61,11 @@
   fill: #FFFFFF;
   text-align: center;
 }
+
+@media (max-width: 576px) {
+  .chartContainer, .pieChartContainer {
+    min-width: 300px;
+    background: transparent;
+    box-shadow: none;
+  }
+}

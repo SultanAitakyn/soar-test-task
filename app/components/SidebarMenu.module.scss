@@ -63,18 +63,3 @@
     }
   }
 }
-
-@media (max-width: 768px) {
-  .menuItem {
-    justify-content: center;
-    padding-left: 0;
-
-    .label {
-      display: none;
-    }
-
-    .iconContainer {
-      margin: 0;
-    }
-  }
-}
