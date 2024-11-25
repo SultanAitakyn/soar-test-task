@@ -24,7 +24,7 @@ const data = [
 const LineChart = () => {
   return (
     <div className={styles.chartContainer}>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={250}>
         <AreaChart
           data={data}
           margin={{

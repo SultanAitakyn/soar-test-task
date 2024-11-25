@@ -72,11 +72,6 @@
 @media (max-width: 992px) {
   .navbar {
     .topRow {
-      .avatar {
-        width: 35px;
-        height: 35px;
-      }
-
       .actions {
         .buttonContainer {
           display: none;
@@ -113,6 +108,12 @@
 @media (max-width: 576px) {
   .navbar {
     .topRow {
+
+      .avatar {
+        width: 35px;
+        height: 35px;
+      }
+
       .pageTitle {
         font-size: 20px;
       }

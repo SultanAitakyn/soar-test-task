@@ -26,14 +26,14 @@ const BarChart = () => {
       <div className={styles.legendContainer}>
         <div className={styles.legendItem}>
           <div className={styles.depositCircle}></div>
-          Diposit
+          Deposit
         </div>
         <div className={styles.legendItem}>
           <div className={styles.withdrawCircle}></div>
           Withdraw
         </div>
       </div>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={250}>
         <RechartsBarChart data={barData} barGap={12}>
           <CartesianGrid stroke="#F3F3F5" horizontal={true} vertical={false} />
           <XAxis
