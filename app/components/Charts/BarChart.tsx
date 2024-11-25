@@ -9,8 +9,17 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
+import { useMediaQuery } from 'react-responsive';
 
 const BarChart = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
+  const isTablet = useMediaQuery({ query: '(max-width: 768px)' });
+  const isLarge = useMediaQuery({ query: '(max-width: 992px)' });
+
+  const fontSize = isMobile ? 10 : isTablet ? 12 : 13;
+  const barSize = isMobile ? 7 : (isTablet || isLarge) ? 10 : 15;
+  const barGap = isMobile ? 2 : isTablet ? 10 : 12;
+
   const barData = [
     { day: 'Mon', deposit: 100, withdraw: 150 },
     { day: 'Tue', deposit: 200, withdraw: 100 },
@@ -34,14 +43,14 @@ const BarChart = () => {
         </div>
       </div>
       <ResponsiveContainer width="100%" height={250}>
-        <RechartsBarChart data={barData} barGap={12}>
+        <RechartsBarChart data={barData} barGap={barGap}>
           <CartesianGrid stroke="#F3F3F5" horizontal={true} vertical={false} />
           <XAxis
             dataKey="day"
             tick={{
               fill: '#718EBF',
               fontFamily: 'Inter',
-              fontSize: 13,
+              fontSize: fontSize,
               fontWeight: 400,
               textAnchor: 'middle',
             }}
@@ -52,25 +61,30 @@ const BarChart = () => {
             tick={{
               fill: '#718EBF',
               fontFamily: 'Inter',
-              fontSize: 13,
+              fontSize: fontSize,
               fontWeight: 400,
               textAnchor: 'end',
             }}
             axisLine={false}
             tickLine={false}
           />
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              borderRadius: '12px',
+              border: '1px solid #e6eff5'
+            }}
+          />
           <Bar
             dataKey="deposit"
             fill="#396AFF"
             radius={[10, 10, 10, 10]}
-            barSize={15}
+            barSize={barSize}
           />
           <Bar
             dataKey="withdraw"
             fill="#232323"
             radius={[10, 10, 10, 10]}
-            barSize={15}
+            barSize={barSize}
           />
         </RechartsBarChart>
       </ResponsiveContainer>

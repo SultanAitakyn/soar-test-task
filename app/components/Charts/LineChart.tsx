@@ -50,7 +50,12 @@ const LineChart = () => {
             tick={{ fill: '#718EBF', fontSize: 14 }}
             axisLine={{ stroke: '#DFE5EE', strokeDasharray: '3 3' }}
           />
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              borderRadius: '12px',
+              border: '1px solid #e6eff5'
+            }}
+          />
           <Area
             type="monotone"
             dataKey="value"

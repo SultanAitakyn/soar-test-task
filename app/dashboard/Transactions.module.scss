@@ -78,3 +78,9 @@
 .iconBackgroundUser {
   background: #dcfaf8;
 }
+
+@media (max-width: 576px) {
+  .transactionList {
+    background: transparent;
+  }
+}

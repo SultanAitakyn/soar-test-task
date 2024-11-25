@@ -125,7 +125,12 @@ const PieChart = () => {
               <Cell key={`cell-${index}`} fill={entry.color} />
             ))}
           </Pie>
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              borderRadius: '12px',
+              border: '1px solid #e6eff5'
+            }}
+          />
         </RechartsPieChart>
       </ResponsiveContainer>
     </div>

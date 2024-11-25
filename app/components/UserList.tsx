@@ -82,7 +82,7 @@ const UserList = () => {
           <input className={styles.amount} placeholder="525.50" />
           <button className={styles.sendButton}>
             <span className={styles.sendText}>Send</span>
-            <img src="/icons/send.svg" alt="send" />
+            <img src="/icons/send.svg" alt="send" className={styles.sendIcon} />
           </button>
         </div>
       </div>
